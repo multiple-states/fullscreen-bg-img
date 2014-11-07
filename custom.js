@@ -10,7 +10,7 @@ var setHeight = function () {
 };
  
 // Call the setHeight function on window load
-$( window ).load( setHeight );
+$( document ).ready( setHeight );
  
 // Call the setHeight function on wondow resize
 $(window).on( "resize", setHeight ).resize();
