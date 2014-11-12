@@ -16,7 +16,7 @@ $( document ).ready( setHeight );
 $(window).on( "resize", setHeight ).resize();
 
 // ---------------------------------------------------------  Make the BG imag cover the god damn screen
-
+//SOURCE - http://css-tricks.com/perfect-full-page-background-image/
 
 $(window).load(function() {    
 
@@ -28,25 +28,19 @@ $(window).load(function() {
     
     if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
 
-        bg
-          .removeClass()
-          .addClass('hero-image-height');
+        bg.removeClass().addClass('hero-image-height');
 
         var marginLeft = bg.width()/2;
 
-        bg           
-          .css({"margin-top": "0", "margin-left": -marginLeft});
+        bg.css({"margin-top": "0", "margin-left": -marginLeft});
 
     } else {
 
-        bg
-          .removeClass()
-          .addClass('hero-image-width');
+        bg.removeClass().addClass('hero-image-width');
 
         var marginTop = bg.height()/2;
 
-        bg
-          .css({"margin-left": "0", "margin-top": -marginTop});
+        bg.css({"margin-left": "0", "margin-top": -marginTop});
 
     }
           
