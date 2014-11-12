@@ -14,3 +14,44 @@ $( document ).ready( setHeight );
  
 // Call the setHeight function on wondow resize
 $(window).on( "resize", setHeight ).resize();
+
+// ---------------------------------------------------------  Make the BG imag cover the god damn screen
+
+
+$(window).load(function() {    
+
+  var theWindow         = $(window),
+      bg                = $(".hero-image"),
+      aspectRatio       = bg.width() / bg.height();
+                    
+  function resizeBg() {
+    
+    if ( (theWindow.width() / theWindow.height()) < aspectRatio ) {
+
+        bg
+          .removeClass()
+          .addClass('hero-image-height');
+
+        var marginLeft = bg.width()/2;
+
+        bg           
+          .css({"margin-top": "0", "margin-left": -marginLeft});
+
+    } else {
+
+        bg
+          .removeClass()
+          .addClass('hero-image-width');
+
+        var marginTop = bg.height()/2;
+
+        bg
+          .css({"margin-left": "0", "margin-top": -marginTop});
+
+    }
+          
+  }
+                          
+  theWindow.resize(resizeBg).trigger("resize");
+
+});
