@@ -18,11 +18,28 @@
     
     <!-- The bg image and logo -->
     <div class="hero-holder">
-      <img class="hero-image" src="images/hero.jpg">
+
+      <!--  
+      When loading the image we can use srcset for browsers that can handle it. 
+      Just remember that when a screen is portrait in orientation the size of the 
+      image will be roughly double the width of the screen. So we must declare that 
+      in our sizes attribute. I have decided that most people with a viewport width 
+      of under 1024px will be using a device in portrait mode. 
+      -->
+
+      <img 
+        class="hero-image" 
+        srcset="images/hero-s.jpg  512w, 
+                images/hero-m.jpg  1024w,
+                images/hero-l.jpg  2024w"
+        sizes="(max-width: 1024px) 200vw,
+              100vw"
+        src="images/hero-m.jpg"
+      >
 
       <div class="logo-holder">
           <div class="logo-centerer"></div>
-          <img class="logo" src="images/logo.png" alt="logo" />
+          <img class="logo" src="images/logo.png" alt="logo"/>
       </div>
     </div>
 
