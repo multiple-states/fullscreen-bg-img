@@ -15,8 +15,9 @@ $( document ).ready( setHeight );
 // Call the setHeight function on wondow resize
 $(window).on( "resize", setHeight ).resize();
 
-// ---------------------------------------------------------  Make the BG imag cover the god damn screen
-//SOURCE - http://css-tricks.com/perfect-full-page-background-image/
+// ---------------------------------------------------------  Make the BG image cover the god damn screen
+
+// This technique is pinched from: http://css-tricks.com/perfect-full-page-background-image/
 
 $(window).load(function() {    
 

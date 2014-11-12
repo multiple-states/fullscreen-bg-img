@@ -1,8 +1,6 @@
 
 body {
   margin: 0;
-  background-color: #222;
-  color: #dedede;
 }
 
 /*------------------------------------------------------------------------------- The BG image holder */
@@ -11,9 +9,17 @@ body {
   float: left;
   overflow: hidden;
   width: 100%;
-  height: 400px;
+  height: 400px; 
+  /* 
+  The above height, and the following media queries are to account for 100vh not working on some mobile browsers 
+  and therefore showing the rest of the page content until the jquery kicks in.
+  */
 
   background-color: #808080;
+  /*
+  In this example this color is set to allow the logo to display whilst waiting for the jquery to kick in.
+  Set it to something that works for your design. Or piss it off.
+  */
 }
 
 @media ( min-height: 401px ) {
@@ -44,6 +50,10 @@ body {
 
 .hero-image {
   display: none;
+  /*
+  We set this as the initial class for the image so that whilst the page is loading we don't show 
+  an unstyled image in the hero-holder.
+  */
 }
 
 .hero-image-width { 
@@ -64,6 +74,11 @@ body {
 
 /*------------------------------------------------------------------------------- The centered Logo */
 
+/*
+This centering technique is pinched from: 
+http://stackoverflow.com/questions/18516317/vertically-align-an-image-inside-a-div-with-responsive-height
+*/
+
 .logo-holder {
     position: absolute;
     top: 0;
@@ -71,7 +86,7 @@ body {
     left: 0;
     right: 0;
     
-    text-align:center; /* Align center inline elements */
+    text-align:center;
     font: 0/0 a;
 }
  
