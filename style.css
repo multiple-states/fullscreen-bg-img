@@ -6,6 +6,7 @@ body {
 /*------------------------------------------------------------------------------- The BG image holder */
 
 .hero-holder {
+  position: relative;
   float: left;
   overflow: hidden;
   width: 100%;
